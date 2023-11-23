@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href=$KANTA_URL/config/init.php />
     <!-- Välilehden otsikko -->
     <title>Twitter-sivu</title>
     <meta charset="utf-8">
   </head>
   <body>
+  
     <?php
+      include_once ('C:\xampp\htdocs\tweets\config\init.php');
+      include_once ('C:\xampp\htdocs\tweets\tietokanta/tweets.php');
+
+      $tweets getAllTweets();
+
       // Tietokantaan yhdistämis tiedot
       $hostname = 'hostnimi';
       $dbname = 'tietokannan nimi';
@@ -62,11 +68,6 @@
     <p><?=$tweet['text']?></p>
     </article>
     <?php } ?>
-
-    <?php
-  include_once ('init.php');
-    ?>
-
 
     <!-- Otsikko -->
     <section id="tweets">
